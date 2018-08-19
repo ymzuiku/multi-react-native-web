@@ -1,5 +1,8 @@
 # react-native & react-native-web 的多项目框架, 内置轻量级 navigation
 
+## 内置tiny-navigation
+兼容浏览器的返回按钮,屏蔽回退按钮,兼容移动端右滑返回页面
+
 ## 安装
 
 克隆项目

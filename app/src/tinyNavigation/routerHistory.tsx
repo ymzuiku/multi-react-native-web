@@ -72,7 +72,6 @@ history.listen(e => {
 function hashChange() {
   try {
     let pathname = window.location.href.split(position)[1];
-    // 当使用系统的返回按钮时(包括右滑)
     if (pathname !== nowHistory.pathname) {
       const pathname = history.entries[history.length - 2].pathname;
       for (let i = 0; i < history.length; i++) {
