@@ -1,0 +1,12 @@
+{
+  "name": "rn-projects",
+  "version": "0.0.1",
+  "main": "environment.js",
+  "private": true,
+  "scripts": {
+    "to": "bash starter.sh"
+  },
+  "dependencies": {
+    "fs-extra": "^7.0.0"
+  }
+}
