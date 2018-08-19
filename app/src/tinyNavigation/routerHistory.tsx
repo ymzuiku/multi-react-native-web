@@ -68,22 +68,18 @@ history.listen(e => {
   }
 });
 
-// history.
 //监听触发操作
 function hashChange() {
   try {
     let pathname = window.location.href.split(position)[1];
     if (pathname !== nowHistory.pathname) {
-      if (history.entries.length > 1) {
-        if (pathname === history.entries[history.entries.length - 2].pathname) {
+      const pathname = history.entries[history.length - 2].pathname;
+      for (let i = 0; i < history.length; i++) {
+        if (history.index > 1) {
           history.goBack();
-          history.entries = history.entries.splice(history.entries.length - 2);
-          history.entries.length -= 1;
-          // history.go(history.entries.length - 2)
         }
-      } else {
-        history.push(pathname);
       }
+      history.push(pathname);
     }
   } catch (err) {
     // err
@@ -128,23 +124,15 @@ try {
   }
 } catch (err) {}
 
-// interface IProps extends RouteProps {
-//   catch?: boolean;
-// }
-
-// class Route extends React.PureComponent<IProps, any> {
-//   render() {
-//     return (
-//       <DefRoute
-//         exact={this.props.exact}
-//         path={this.props.path}
-//         component={this.props.component}
-//         render={this.props.render}
-//       />
-//     );
-//   }
-// }
-
+let goToHome = function() {
+  const pathname = history.entries[1].pathname;
+  for (let i = 0; i < history.length; i++) {
+    if (history.index > 1) {
+      history.goBack();
+    }
+  }
+  history.push(pathname);
+};
 export {
   history,
   Route,
@@ -158,4 +146,5 @@ export {
   historyAddListen,
   historyRemoveListen,
   position,
+  goToHome,
 };

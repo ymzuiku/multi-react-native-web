@@ -11,6 +11,7 @@ import {
   withRouter,
   historyAddListen,
   historyRemoveListen,
+  goToHome,
 } from './routerHistory';
 import NaviBar from './NaviBar';
 import NaviRoute from './NaviRoute';
@@ -32,4 +33,5 @@ export {
   NaviBar,
   TabBar,
   NaviRoute,
+  goToHome.
 };

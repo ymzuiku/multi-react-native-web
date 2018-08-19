@@ -1,6 +1,11 @@
 import * as React from 'react';
 import { View, StyleSheet, Dimensions, Animated, Platform } from 'react-native';
-import { Route, historyAddListen, historyRemoveListen } from './routerHistory';
+import {
+  history,
+  Route,
+  historyAddListen,
+  historyRemoveListen,
+} from './routerHistory';
 
 const AnimatedView = Animated.createAnimatedComponent(View);
 
@@ -23,8 +28,8 @@ interface IProps {
 
 class NaviRoute extends React.PureComponent<IProps, any> {
   static defaultProps = {
-    moveOutFix: 0.7,
-    moveInFix: 0.7,
+    moveOutFix: 1,
+    moveInFix: 1,
     backgroundColor: '#fff',
     animed: true,
     isShowdown: true,
@@ -119,7 +124,7 @@ class NaviRoute extends React.PureComponent<IProps, any> {
           transform: [{ translateX: moveX }],
         }}
       >
-        <View
+        {/* <View
           style={{
             width: 1,
             height: '100%',
@@ -128,7 +133,7 @@ class NaviRoute extends React.PureComponent<IProps, any> {
             position: 'absolute',
             left: -1,
           }}
-        />
+        /> */}
         <Route
           exact={this.props.exact}
           path={this.state.isAnime ? '*' : this.props.path}

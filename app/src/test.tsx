@@ -3,6 +3,9 @@ import { NaviBar, history } from './tinyNavigation';
 import { View, Button } from 'react-native';
 
 export default class extends React.Component {
+  componentDidMount(){
+    console.log('render-test')
+  }
   render() {
     return (
       <View>

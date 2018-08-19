@@ -30,6 +30,9 @@ const assets = {
 };
 
 class Desktop extends React.Component {
+  componentDidMount(){
+    console.log('render-desktop')
+  }
   render() {
     return (
       <View>
@@ -40,6 +43,9 @@ class Desktop extends React.Component {
   }
 }
 class Discover extends React.Component {
+  componentDidMount(){
+    console.log('render-Discover')
+  }
   render() {
     return (
       <View>
@@ -86,14 +92,15 @@ class Root extends React.Component {
 export default class App extends React.Component {
   componentDidMount() {
     // if begin use other URL page, to be use hashChange()
-    hashChange();
     history.push('/home/');
+    // hashChange();
   }
 
   render() {
     return (
       <Router history={history}>
         <View style={ssc.container}>
+          <NaviRoute root={true} exact path="/home/*" component={Root} />
           <NaviRoute root={true} exact path="/home/*" component={Root} />
           <NaviRoute exact path="/Discover/*" component={Discover} />
           <NaviRoute exact path="/Desktop/*" component={Desktop} />
