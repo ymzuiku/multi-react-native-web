@@ -1,7 +1,6 @@
 import * as React from 'react';
 import { View, StyleSheet, Dimensions, Animated, Platform } from 'react-native';
 import {
-  history,
   Route,
   historyAddListen,
   historyRemoveListen,
